@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Investigate where a photo appeared online, trace its history, and compare the evidence with the claim.">
+  <title>Fake Photo Checker — Investigate an Image</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Fake Photo Checker home">
+      <span class="brand-mark">F</span><span>Fake Photo Checker</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#what-we-check">What we check</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="nav-cta" href="#checker">Investigate an image</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">IMAGE INVESTIGATION</div>
+        <h1>Don’t just look at the photo. <span>Investigate its story.</span></h1>
+        <p class="hero-lead">Find where an image appeared online, trace its documented history, and compare the evidence with the claim attached to it.</p>
+        <div class="hero-points">
+          <div><span>✓</span> Matching web references</div>
+          <div><span>✓</span> Earliest documented dates found</div>
+          <div><span>✓</span> Evidence you can inspect yourself</div>
+        </div>
+        <p class="micro-note">Evidence, not certainty. A search result cannot by itself prove who created an image.</p>
+      </div>
+
+      <div class="checker-card" id="checker">
+        <div class="card-kicker">START AN INVESTIGATION</div>
+        <h2>Check a photo</h2>
+        <p class="card-intro">Upload an image and we’ll search available web references for matching or similar appearances.</p>
+
+        <label class="dropzone" id="dropzone" for="imageInput">
+          <input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+          <div class="upload-icon">↑</div>
+          <strong id="dropTitle">Drop your image here</strong>
+          <span id="dropText">or click to browse · JPG, PNG or WebP · max 5 MB</span>
+          <img id="preview" alt="Selected image preview" hidden>
+        </label>
+
+        <div class="field">
+          <label for="claim">What is the image claimed to show? <span>Optional</span></label>
+          <textarea id="claim" maxlength="500" rows="3" placeholder="Example: “This photo was taken in 2026 during the event…”"></textarea>
+        </div>
+
+        <div id="errorBox" class="inline-error" hidden></div>
+        <button id="checkBtn" class="primary-btn" type="button">Investigate this photo <span>→</span></button>
+        <div id="progress" class="progress" hidden><span class="spinner"></span><span>Creating investigation…</span></div>
+        <p class="privacy-note">Your upload is used to perform the investigation. The temporary backend file is removed after processing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section trust-strip">
+    <div class="container trust-grid">
+      <div><strong>01</strong><span>Search matching references</span></div>
+      <div><strong>02</strong><span>Compare dates and sources</span></div>
+      <div><strong>03</strong><span>Build a documented timeline</span></div>
+      <div><strong>04</strong><span>Review the evidence</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="what-we-check">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">WHAT YOU GET</div>
+        <h2>A research trail, not a magic “fake” button.</h2>
+        <p>Fake Photo Checker focuses on the image’s online history. It does not pretend that a search result alone can determine authenticity.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-number">01</div><h3>Matching images</h3><p>Find exact, near-exact, partial, page and visually similar web references returned by the search service.</p></article>
+        <article class="feature-card"><div class="feature-number">02</div><h3>Source discovery</h3><p>See the pages and domains connected to the image so you can open and inspect the underlying evidence.</p></article>
+        <article class="feature-card"><div class="feature-number">03</div><h3>Documented timeline</h3><p>Where public page dates can be established, they are placed into a chronological timeline.</p></article>
+        <article class="feature-card"><div class="feature-number">04</div><h3>Claim context</h3><p>If you provide a claim, the report explains how the available dated web evidence relates to it.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark-section" id="how-it-works">
+    <div class="container">
+      <div class="section-heading light">
+        <div class="eyebrow">HOW IT WORKS</div>
+        <h2>From upload to evidence in four stages.</h2>
+      </div>
+      <div class="process-grid">
+        <article><span>01</span><h3>Upload</h3><p>Choose the photo you want to investigate.</p></article>
+        <article><span>02</span><h3>Search</h3><p>The system checks web-image references available through its search provider.</p></article>
+        <article><span>03</span><h3>Trace</h3><p>Matching pages and available public dates are organized into a timeline.</p></article>
+        <article><span>04</span><h3>Review</h3><p>Open the sources and judge the evidence in its original context.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section example-section">
+    <div class="container example-grid">
+      <div>
+        <div class="eyebrow">EXAMPLE REPORT</div>
+        <h2>See the kind of evidence the report is designed to surface.</h2>
+        <p>Results can show an earliest documented appearance, evidence strength, matching sources, dates, search context and the image’s SHA-256 fingerprint.</p>
+        <a class="text-link" href="#checker">Run your own investigation →</a>
+      </div>
+      <div class="mock-report">
+        <div class="mock-top"><span>IMAGE INVESTIGATION</span><b>MODERATE</b></div>
+        <h3>Investigation report</h3>
+        <div class="mock-metrics"><div><small>Earliest documented appearance</small><strong>2024-08-17</strong></div><div><small>Matching references</small><strong>12</strong></div></div>
+        <div class="mock-line"><i></i><span>2024-08-17 · example-source.com</span></div>
+        <div class="mock-line"><i></i><span>2025-02-03 · another-source.org</span></div>
+        <div class="mock-line"><i></i><span>2026-01-12 · news-example.com</span></div>
+        <p class="mock-note">Example only — not a real investigation result.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section limitations">
+    <div class="container limitation-grid">
+      <div>
+        <div class="eyebrow">IMPORTANT</div>
+        <h2>What this tool cannot prove.</h2>
+      </div>
+      <div class="limitation-list">
+        <p><span>—</span> The earliest result found is not necessarily the original creation date.</p>
+        <p><span>—</span> A webpage publication date is not proof of when the image itself was taken.</p>
+        <p><span>—</span> No search result does not prove that an image is original or authentic.</p>
+        <p><span>—</span> This MVP does not claim to detect AI-generated imagery or pixel-level manipulation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container narrow">
+      <div class="section-heading">
+        <div class="eyebrow">FAQ</div>
+        <h2>Questions before you investigate?</h2>
+      </div>
+      <details><summary>Does this tell me if a photo is fake?</summary><p>Not by itself. The current MVP investigates online history and evidence. A later forensic module can separately analyze manipulation or synthetic-generation indicators.</p></details>
+      <details><summary>What does “earliest documented appearance” mean?</summary><p>It means the earliest dated web evidence found in the returned results after bounded date analysis. It is not a guaranteed original upload or creation date.</p></details>
+      <details><summary>Can I investigate a claim as well as an image?</summary><p>Yes. Add the claim or caption you are checking. The report can compare it with the dated web evidence that was found.</p></details>
+      <details><summary>Why might a search find nothing?</summary><p>Search coverage is incomplete. Private pages, deleted content, unindexed pages and images with little web presence may not appear.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">F</span><span>Fake Photo Checker</span></a>
+    <p>Investigate the story behind an image.</p>
+    <span>Evidence, not certainty.</span>
+  </div>
+</footer>
+<script src="app.js" defer></script>
+</body>
+</html>
